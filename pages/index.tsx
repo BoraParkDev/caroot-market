@@ -1,8 +1,11 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import type { NextPage } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+const Home: NextPage = () => {
+  return (
+    <div className="bg-blue-500">
+      <h1 className="text-indigo-600">Hello World!</h1>
+    </div>
+  );
+};
 
-export default function Home() {
-  return null;
-}
+export default Home;
