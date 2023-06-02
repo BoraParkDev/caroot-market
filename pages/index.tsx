@@ -3,7 +3,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-slate-400 py-20 px-10 grid gap-5 min-h-screen">
+    <div className="bg-slate-400 py-20 px-10 grid gap-10 xl:grid-cols-3 min-h-screen">
       <div className="bg-white p-6 rounded-2xl shadow-xl">
         <span className="font-semibold text-2xl">Select Item</span>
         <ul>
@@ -38,8 +38,8 @@ const Home: NextPage = () => {
           Checkout
         </button>
       </div>
-      <div className="bg-white overflow-hidden rounded-2xl shadow-xl group">
-        <div className="bg-blue-400 p-6 pb-20">
+      <div className="bg-white sm:bg-red-100 md:bg-teal-100 lg:bg-indigo-100 xl:bg-yellow-100 2xl:bg-pink-100 overflow-hidden rounded-2xl shadow-xl group">
+        <div className="portrait:bg-blue-400 landscape:bg-teal-400 p-6 pb-20">
           <span className="text-white text-2xl">Profile</span>
         </div>
         <div className="rounded-3xl p-6 bg-white relative -top-10">
