@@ -3,8 +3,8 @@ import { BsArrowLeft } from "react-icons/bs";
 
 const Home: NextPage = () => {
   return (
-    <div className="dark:md:hover:bg-teal-400 bg-[url('/vercel.svg')] bg-slate-400 py-20 px-10 grid gap-10 xl:grid-cols-3 min-h-screen">
-      <h2 className="text-[9px] text-[#000]">Hello</h2>
+    <div className="dark:md:hover:bg-teal-400 bg-slate-400 py-20 px-10 grid gap-10 xl:grid-cols-3 min-h-screen">
+      {/*<h2 className="text-[9px] text-[#000]">Hello</h2>*/}
       <div className="bg-white p-6 rounded-2xl shadow-xl">
         <span className="font-semibold text-2xl">Select Item</span>
         <ul>
