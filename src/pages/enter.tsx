@@ -1,6 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import Input from "@/components/Input";
+import Button from "@/components/Button";
 
 const Enter = () => {
   const [method, setMethod] = useState<"email" | "phone">("email");
@@ -54,10 +55,11 @@ const Enter = () => {
                 </div>
               ) : null}
             </div>
-            <button className="mt-5 bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 border boreder-transparent rounded-md shadow-sm text-sm font-medium focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:outline-one">
+            <Button>
+              {" "}
               {method === "email" ? "Get login link" : null}
               {method === "phone" ? "Get one-time password" : null}
-            </button>
+            </Button>
           </form>
           <div className="mt-8">
             <div className="relative">
