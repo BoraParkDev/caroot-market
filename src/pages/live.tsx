@@ -12,7 +12,7 @@ const Live: NextPage = () => {
           <h3 className="text-gray-700 text-lg mt-2">Video Title</h3>
         </div>
       ))}
-      <RoundButton>
+      <RoundButton classname="border-transparent">
         <Plus className="w-6 h-6" />
       </RoundButton>
     </div>
