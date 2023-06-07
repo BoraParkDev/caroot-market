@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import RoundButton from "@/components/Button/RoundButton";
-import Plus from "@/assets/common/ico_plus.svg";
+import LiveSVG from "@/assets/pages/live/ico_live.svg";
 
 const Live: NextPage = () => {
   const arr = new Array(5).fill(1);
@@ -13,7 +13,7 @@ const Live: NextPage = () => {
         </div>
       ))}
       <RoundButton classname="border-transparent">
-        <Plus className="w-6 h-6" />
+        <LiveSVG className="w-6 h-6" />
       </RoundButton>
     </div>
   );
