@@ -1,4 +1,4 @@
-import SendButton from "@/components/Button/SendButton";
+import SendButton from "@/components/button/SendButton";
 import { NextPage } from "next";
 
 const ChatDetail: NextPage = () => {

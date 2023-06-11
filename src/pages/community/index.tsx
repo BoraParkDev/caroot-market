@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import RoundButton from "@/components/Button/RoundButton";
+import RoundButton from "@/components/button/RoundButton";
 
 import Checkbox from "@/assets/pages/community/ico_checkbox.svg";
 import Bubble from "@/assets/common/ico_bubble.svg";

@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Button from "@/components/Button";
+import Button from "@/components/button";
 import Heart from "@/assets/common/ico_heart.svg";
 
 const ItemDetail: NextPage = () => {

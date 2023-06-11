@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import RoundButton from "@/components/Button/RoundButton";
+import RoundButton from "@/components/button/RoundButton";
 import StreamVideo from "@/assets/pages/stream/ico_stream.svg";
 
 const Stream: NextPage = () => {
