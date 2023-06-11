@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import RoundButton from "@/components/Button/RoundButton";
-import LiveSVG from "@/assets/pages/live/ico_live.svg";
+import StreamVideo from "@/assets/pages/stream/ico_stream.svg";
 
-const Live: NextPage = () => {
+const Stream: NextPage = () => {
   const arr = new Array(5).fill(1);
   return (
     <div className="py-10 px-4 divide-y-2 space-y-4">
@@ -13,10 +13,10 @@ const Live: NextPage = () => {
         </div>
       ))}
       <RoundButton classname="border-transparent">
-        <LiveSVG className="w-6 h-6" />
+        <StreamVideo className="w-6 h-6" />
       </RoundButton>
     </div>
   );
 };
 
-export default Live;
+export default Stream;
