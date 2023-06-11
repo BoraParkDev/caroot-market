@@ -19,11 +19,9 @@ const Layout = ({ ...props }: LayoutProps) => {
       <div className="bg-white max-w-lg w-full py-3 text-lg font-medium fixed text-gray-900 border-b top-0 flex items-center justify-center">
         {props.title ? <span>{props.title}</span> : null}
       </div>
-      <div className={classNames("pt-12", props.hasTabs ? "pb-24" : "")}>
-        {props.children}
-      </div>
+      <div className="py-10">{props.children}</div>
       {props.hasTabs ? (
-        <nav className="bg-white max-w-xl text-gray-700 border-t fixed bottom-0 w-full px-10 pb-5 pt-3 flex justify-between text-xs">
+        <nav className="bg-white max-w-lg text-gray-700 border-t fixed bottom-0 w-full px-10 pb-5 pt-24 flex justify-between text-xs">
           <ul className="py-2 space-y-2 w-full flex justify-between items-center content-center text-center">
             <li className="w-1/5 mx-auto cursor-pointer">
               <Link href="/">
@@ -33,7 +31,7 @@ const Layout = ({ ...props }: LayoutProps) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <span>Home</span>
+                <span>홈</span>
               </Link>
             </li>
             <li className="w-1/5 mx-auto cursor-pointer">
@@ -44,7 +42,7 @@ const Layout = ({ ...props }: LayoutProps) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <span>News</span>
+                <span>동네생활</span>
               </Link>
             </li>
             <li className="w-1/5 mx-auto cursor-pointer">
@@ -55,7 +53,7 @@ const Layout = ({ ...props }: LayoutProps) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <span>Messages</span>
+                <span>채팅</span>
               </Link>
             </li>
             <li className="w-1/5 mx-auto cursor-pointer">
@@ -66,7 +64,7 @@ const Layout = ({ ...props }: LayoutProps) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <span>Stream</span>
+                <span>라이브</span>
               </Link>
             </li>
             <li className="w-1/5 mx-auto cursor-pointer">
@@ -77,7 +75,7 @@ const Layout = ({ ...props }: LayoutProps) => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <span>User</span>
+                <span>나의 당근보기</span>
               </Link>
             </li>
           </ul>

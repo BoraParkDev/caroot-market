@@ -8,7 +8,7 @@ import Layout from "@/layout/layout";
 const Home: NextPage = () => {
   const arr = new Array(10).fill(1);
   return (
-    <Layout title="Home" hasTabs={true}>
+    <Layout title="홈" hasTabs={true}>
       <div className="flex flex-col space-y-5 py-10">
         {arr.map((_, i) => (
           <div
