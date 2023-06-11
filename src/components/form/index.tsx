@@ -52,7 +52,7 @@ const Form: NextPage<FormProps> = ({ children }) => {
         </label>
         <textarea
           rows={4}
-          className="mt-1 shadow-sm w-full rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+          className="mt-1 shadow-sm w-full rounded-md border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
         />
       </div>
       <Button classnames="w-full">Upload product</Button>

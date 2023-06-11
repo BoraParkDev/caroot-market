@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import RoundButton from "@/components/button/RoundButton";
-import StreamVideo from "@/assets/pages/stream/ico_stream.svg";
+import StreamVideo from "@/assets/common/ico_stream.svg";
 
 const Stream: NextPage = () => {
   const arr = new Array(5).fill(1);
