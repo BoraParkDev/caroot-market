@@ -7,7 +7,7 @@ export type FormProps = {
 
 const Form: NextPage<FormProps> = ({ children }) => {
   return (
-    <form className="px-4 py-16 space-y-5">
+    <form className="px-4 py-10 space-y-5">
       <div>{children}</div>
       <div>
         <label

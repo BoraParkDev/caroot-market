@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import classNames from "classnames";
 import Home from "@/assets/common/ico_home.svg";
 import News from "@/assets/common/ico_news.svg";
@@ -14,9 +15,20 @@ export type LayoutProps = {
 };
 
 const Layout = ({ ...props }: LayoutProps) => {
+  const router = useRouter();
+
+  const goBack = () => {
+    router.back();
+  };
   return (
     <div>
-      <div className="bg-white max-w-lg w-full py-3 text-lg font-medium fixed text-gray-900 border-b top-0 flex items-center justify-center">
+      <div
+        className={classNames(
+          !props.canGoBack ? "justify-center" : "",
+          "bg-white max-w-lg w-full py-3 text-lg font-medium fixed text-gray-900 border-b top-0 flex items-center"
+        )}
+      >
+        {props.canGoBack ? <button onClick={goBack}>&larr;</button> : null}
         {props.title ? <span>{props.title}</span> : null}
       </div>
       <div className="py-10">{props.children}</div>

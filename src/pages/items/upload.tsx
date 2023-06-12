@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import File from "@/assets/pages/items/ico_file.svg";
 import Button from "@/components/button";
 import Form from "@/components/form";
+import Layout from "@/layout/layout";
 
 const PhotoBox = () => {
   return (
@@ -23,9 +24,11 @@ const PhotoBox = () => {
 
 const Upload: NextPage = () => {
   return (
-    <Form>
-      <PhotoBox />
-    </Form>
+    <Layout canGoBack={true}>
+      <Form>
+        <PhotoBox />
+      </Form>
+    </Layout>
   );
 };
 

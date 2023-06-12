@@ -43,11 +43,11 @@ const Enter = () => {
               htmlFor="input"
               className="text-sm font-medium text-gray-700"
             >
-              {method === "email" ? "Email address" : null}
-              {method === "phone" ? "Phone number" : null}
+              {method === "email" ? "Email address" : ""}
+              {method === "phone" ? "Phone number" : ""}
             </label>
             <div className="mt-1">
-              {method === "email" ? <Input id="input" type="email" /> : null}
+              {method === "email" ? <Input id="input" type="email" /> : ""}
               {method === "phone" ? (
                 <div className="flex rounded-md shadow-sm">
                   <span className="flex items-center justify-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 select-none text-sm">
@@ -58,8 +58,8 @@ const Enter = () => {
               ) : null}
             </div>
             <Button>
-              {method === "email" ? "Get login link" : null}
-              {method === "phone" ? "Get one-time password" : null}
+              {method === "email" ? "Get login link" : ""}
+              {method === "phone" ? "Get one-time password" : ""}
             </Button>
           </form>
           <div className="mt-8">
