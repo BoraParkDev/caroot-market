@@ -6,9 +6,14 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// 한 객체가 다른 객체에 연결된 상태를 생성하려고 할 때 그 연결을 받는 객체가 존재한다는 것을 보장한다.
+// - Vitess는 Scalability에 특화되어 있어서 Foreign Key Constraint를 지원하지 않음.
+// referentialIntegrity: 참조 무결성 ~ 모든 참조가 유효한 데이터 셋이다. 어떤 다른 모델을 참조하는 경우 해당 모델이 반드시 존재해야 한다.
+
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 //모델 만들기
