@@ -1,42 +1,29 @@
 import { ChangeEvent, FormEvent, useCallback, useState } from "react";
-import { useForm } from "./userForm";
+import { useForm } from "react-hook-form";
+// import { useForm } from "./userForm";
 
 export default function Forms() {
-  const form = useForm();
+  const { register, watch, handleSubmit } = useForm();
+  //register의 역할 : input을 state에 등록해준다.
+  //객체의 [key]:value 가 할당되는 것.
+  //따라서 input의 고유 속성인 onBlur, onChange, ref, value가 객체 형태로 등록된다.
+  //watch의 역할 : state의 변화를 "관찰"한다.
 
   return (
-    <form onSubmit={form.handleSubmit}>
+    <form>
       <input
+        {...register("username")}
         type="text"
-        name="username"
         placeholder="Username"
-        onChange={form.handleInput}
-        // required
-        // minLength={5}
+        required
       />
-      {form.formErrors.username && (
-        <p style={{ color: "red" }}>{form.formErrors.username}</p>
-      )}
+      <input {...register("email")} type="text" placeholder="Email" required />
       <input
+        {...register("password")}
         type="text"
-        name="email"
-        placeholder="Email"
-        onChange={form.handleInput}
-        // required
-      />
-      {form.formErrors.email && (
-        <p style={{ color: "red" }}>{form.formErrors.email}</p>
-      )}
-      <input
-        type="text"
-        name="password"
         placeholder="Password"
-        onChange={form.handleInput}
-        // required
+        required
       />
-      {form.formErrors.password && (
-        <p style={{ color: "red" }}>{form.formErrors.password}</p>
-      )}
       <input type="submit" value="Create Account" />
     </form>
   );
