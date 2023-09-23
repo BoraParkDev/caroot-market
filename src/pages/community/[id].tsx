@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Checkbox from "@/assets/pages/community/ico_checkbox.svg";
 import Bubble from "@/assets/common/ico_bubble.svg";
 import Layout from "@/layout/layout";
-import Button from "@/components/Button";
+import Button from "@/components/button";
 
 const CommunityPostDetail: NextPage = () => {
   return (

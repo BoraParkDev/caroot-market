@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@/components/button";
 import Layout from "@/layout/layout";
 import { NextPage } from "next";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import Input from "@/components/Input";
-import Button from "@/components/Button";
+import Button from "@/components/button";
 import Twitter from "@/assets/pages/enter/ico_twitter.svg";
 import Github from "@/assets/pages/enter/ico_github.svg";
 
