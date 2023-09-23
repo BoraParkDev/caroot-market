@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import File from "@/assets/pages/items/ico_file.svg";
-import Button from "@/components/button";
+import Button from "@/components/Button";
 import Form from "@/components/form";
 import Layout from "@/layout/layout";
 

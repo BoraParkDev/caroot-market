@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Button from "../button";
+import Button from "@/components/Button";
 
 export type FormProps = {
   children?: React.ReactNode;
