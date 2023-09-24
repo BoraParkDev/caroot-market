@@ -13,7 +13,7 @@ export default function Forms() {
     watch,
     handleSubmit,
     formState: { errors },
-    setError,
+    setError, // form 전역의 error를 관장한다.
     reset,
   } = useForm<FormValue>({ mode: "onChange" });
   //register의 역할 : input을 state에 등록해준다.
