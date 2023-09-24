@@ -14,7 +14,8 @@ export default function Forms() {
     handleSubmit,
     formState: { errors },
     setError,
-  } = useForm<FormValue>();
+    reset,
+  } = useForm<FormValue>({ mode: "onChange" });
   //register의 역할 : input을 state에 등록해준다.
   //객체의 [key]:value 가 할당되는 것.
   //따라서 input의 고유 속성인 onBlur, onChange, ref, value가 객체 형태로 등록된다.
@@ -30,22 +31,63 @@ export default function Forms() {
   return (
     <form onSubmit={handleSubmit(onSubmit, onError)}>
       <input
-        {...register("username", { required: true })}
+        {...register("username", {
+          required: "Username is required.",
+          minLength: {
+            value: 4,
+            message: "Username must be as least 4 characters.",
+          },
+          maxLength: {
+            value: 50,
+            message: "Username shorter than 50 characters.",
+          },
+          setValueAs: (value: string) => value.trim(),
+        })}
         type="text"
         placeholder="Username"
       />
+      <p style={{ color: "red" }}>{errors.username?.message}</p>
       <br />
       <input
-        {...(register("email"), { required: true })}
+        {...register("email", {
+          required: "Email is required",
+          validate: {
+            NotAllowedEmail: (value: string) => {
+              const reg = new RegExp("[a-z0-9] +@[a-z]+.[a-z]{2,3}");
+              return !reg.test(value) || "Please check your email type.";
+            },
+          },
+        })}
         type="email"
         placeholder="Email"
       />
+      <p style={{ color: "red" }}>{errors.email?.message}</p>
       <br />
       <input
-        {...register("password", { required: true })}
+        {...register("password", {
+          required: "Password is required",
+          minLength: {
+            value: 8,
+            message: "Password must be at least 8 characters long.",
+          },
+          maxLength: {
+            value: 15,
+            message: "Password cannot exceed 15 characters.",
+          },
+          validate: (value: string) => {
+            // 특수문자 1개 이상 포함, 대문자 1개 이상 포함
+            const str = `/^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+)(?=.*[A-Z]).+$/`;
+            const reg = new RegExp(str);
+            return (
+              !reg.test(value) ||
+              "Check your email type. It must contain at least one special character and at least one uppercase letter."
+            );
+          },
+        })}
         type="password"
         placeholder="Password"
       />
+      <p style={{ color: "red" }}>{errors.password?.message}</p>
       <br />
       <br />
       <input type="submit" value="Create Account" />
