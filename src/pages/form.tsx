@@ -45,8 +45,11 @@ export default function Forms() {
         })}
         type="text"
         placeholder="Username"
+        className={`${
+          Boolean(errors.username?.message) ? "border-red-500" : ""
+        }`}
       />
-      <p style={{ color: "red" }}>{errors.username?.message}</p>
+      <p className="text-red-500">{errors.username?.message}</p>
       <br />
       <input
         {...register("email", {
@@ -60,8 +63,9 @@ export default function Forms() {
         })}
         type="email"
         placeholder="Email"
+        className={`${Boolean(errors.email?.message) ? "border-red-500" : ""}`}
       />
-      <p style={{ color: "red" }}>{errors.email?.message}</p>
+      <p className="text-red-500">{errors.email?.message}</p>
       <br />
       <input
         {...register("password", {
@@ -86,8 +90,11 @@ export default function Forms() {
         })}
         type="password"
         placeholder="Password"
+        className={`${
+          Boolean(errors.password?.message) ? "border-red-500" : ""
+        }`}
       />
-      <p style={{ color: "red" }}>{errors.password?.message}</p>
+      <p className="text-red-500">{errors.password?.message}</p>
       <br />
       <br />
       <input type="submit" value="Create Account" />
