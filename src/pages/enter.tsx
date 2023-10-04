@@ -1,14 +1,30 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import classNames from "classnames";
 import Input from "@/components/Input";
 import Button from "@/components/button";
 import Twitter from "@/assets/pages/enter/ico_twitter.svg";
 import Github from "@/assets/pages/enter/ico_github.svg";
+import { useForm } from "react-hook-form";
+
+interface IEnterFormValue {
+  email?: string;
+  phone?: string;
+}
 
 const Enter = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IEnterFormValue>();
+
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => setMethod("email");
   const onPhoneClick = () => setMethod("phone");
+
+  const handleSubmitHandler = useCallback((data: IEnterFormValue) => {
+    console.log(data, "data");
+  }, []);
 
   return (
     <div>
@@ -38,25 +54,28 @@ const Enter = () => {
               </button>
             </div>
           </div>
-          <form className="flex flex-col mt-8">
-            <label
-              htmlFor="input"
-              className="text-sm font-medium text-gray-700"
-            >
-              {method === "email" ? "Email address" : ""}
-              {method === "phone" ? "Phone number" : ""}
-            </label>
-            <div className="mt-1">
-              {method === "email" ? <Input id="input" type="email" /> : ""}
-              {method === "phone" ? (
-                <div className="flex rounded-md shadow-sm">
-                  <span className="flex items-center justify-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 select-none text-sm">
-                    +82
-                  </span>
-                  <Input id="input" type="number" required />
-                </div>
-              ) : null}
-            </div>
+          <form
+            className="flex flex-col mt-8"
+            onSubmit={handleSubmit(handleSubmitHandler)}
+          >
+            {method === "email" ? (
+              <Input
+                id="input"
+                label="Email Address"
+                kind="text"
+                type="email"
+                register={register("email")}
+              />
+            ) : null}
+            {method === "phone" ? (
+              <Input
+                id="input"
+                label="Phone Number"
+                kind="phone"
+                type="number"
+                register={register("phone", { required: true })}
+              />
+            ) : null}
             <Button>
               {method === "email" ? "Get login link" : ""}
               {method === "phone" ? "Get one-time password" : ""}
