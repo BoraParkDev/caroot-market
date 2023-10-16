@@ -89,7 +89,6 @@ const Enter = () => {
                     value: 13,
                     message: "핸드폰 번호는 최대 13자 입니다.",
                   },
-                  validate: function (value) {},
                 })}
               />
             ) : null}
