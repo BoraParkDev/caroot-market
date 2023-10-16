@@ -1,14 +1,15 @@
 import { NextPage } from "next";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 type InputProps = {
   id?: string;
   label: string;
   kind?: "text" | "phone" | "price";
   type: string;
-  [key: string]: any;
+  register: UseFormRegisterReturn;
 };
 
-const Input = ({ id, label, kind = "text", ...rest }: InputProps) => {
+const Input = ({ id, label, kind = "text", type, register }: InputProps) => {
   return (
     <div>
       <label
@@ -21,7 +22,8 @@ const Input = ({ id, label, kind = "text", ...rest }: InputProps) => {
         <div className="rounded-md relative flex  items-center shadow-sm">
           <input
             id={id}
-            {...rest}
+            {...register}
+            type={type}
             className="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
           />
         </div>
@@ -33,7 +35,8 @@ const Input = ({ id, label, kind = "text", ...rest }: InputProps) => {
           </div>
           <input
             id={id}
-            {...rest}
+            {...register}
+            type={type}
             className="appearance-none pl-7 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
           />
           <div className="absolute right-0 pointer-events-none pr-3 flex items-center">
@@ -48,6 +51,7 @@ const Input = ({ id, label, kind = "text", ...rest }: InputProps) => {
           </span>
           <input
             id={id}
+            {...register}
             {...rest}
             className="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md rounded-l-none shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
           />

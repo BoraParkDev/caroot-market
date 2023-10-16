@@ -15,14 +15,21 @@ const Enter = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<IEnterFormValue>();
 
   const [method, setMethod] = useState<"email" | "phone">("email");
-  const onEmailClick = () => setMethod("email");
-  const onPhoneClick = () => setMethod("phone");
+  const onEmailClick = () => {
+    reset();
+    setMethod("email");
+  };
+  const onPhoneClick = () => {
+    reset();
+    setMethod("phone");
+  };
 
-  const handleSubmitHandler = useCallback((data: IEnterFormValue) => {
+  const onValid = useCallback((data: IEnterFormValue) => {
     console.log(data, "data");
   }, []);
 
@@ -54,17 +61,16 @@ const Enter = () => {
               </button>
             </div>
           </div>
-          <form
-            className="flex flex-col mt-8"
-            onSubmit={handleSubmit(handleSubmitHandler)}
-          >
+          <form className="flex flex-col mt-8" onSubmit={handleSubmit(onValid)}>
             {method === "email" ? (
               <Input
                 id="input"
                 label="Email Address"
                 kind="text"
                 type="email"
-                register={register("email")}
+                register={register("email", {
+                  required: "이메일은 필수입니다.",
+                })}
               />
             ) : null}
             {method === "phone" ? (
@@ -73,7 +79,18 @@ const Enter = () => {
                 label="Phone Number"
                 kind="phone"
                 type="number"
-                register={register("phone", { required: true })}
+                register={register("phone", {
+                  required: "핸드폰 번호는 필수입니다.",
+                  minLength: {
+                    value: 10,
+                    message: "핸드폰 번호는 최소 10자 입니다.",
+                  },
+                  maxLength: {
+                    value: 13,
+                    message: "핸드폰 번호는 최대 13자 입니다.",
+                  },
+                  validate: function (value) {},
+                })}
               />
             ) : null}
             <Button>
