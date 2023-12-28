@@ -1,0 +1,48 @@
+- color: 0052CC
+  description: "[이슈 대상] 외부 API"
+  name: "For: API"
+- color: 0052CC
+  description: "[이슈대상] 배포에 관한 이슈"
+  name: "For: Deploy"
+- color: 0052CC
+  description: "[이슈 대상] HTML, CSS"
+  name: "For: Markup/UX"
+- color: 0052CC
+  description: "[이슈 대상] models, DB"
+  name: "For: Models/DB"
+- color: 0052CC
+  description: "[이슈 대상] Client-Side"
+  name: "For: Script"
+- color: 0052CC
+  description: "[이슈 대상] API, 모델, 뷰를 제외한 백엔드 로직"
+  name: "For: Utils"
+- color: 0052CC
+  description: "[이슈 대상] views"
+  name: "For: Views"
+
+- color: FBCA04
+  description: "[이슈 상태] 장기 미해결"
+  name: "Status: ICE BOX"
+- color: FBCA04
+  description: "[이슈 상태] 작업 중 (임시 PR 등)"
+  name: "Status: WIP"
+
+- color: D93F0B
+  description: "[이슈 상태] 긴급 해결 요망"
+  name: "Status: URGENT"
+
+- color: 0E8A16
+  description: "[이슈 목적] 프로덕션 코드 수정 외의 문서, 패키지 매니저, 환경 수정"
+  name: "Type: Docs/Chore"
+- color: 0E8A16
+  description: "[이슈 목적] 버그, 애러 수정"
+  name: "Type: Errors/Bugs"
+- color: 0E8A16
+  description: "[이슈 목적] 새로운 기능 추가"
+  name: "Type: Feature"
+- color: 0E8A16
+  description: "[이슈 목적] 프로덕션 코드 리팩토링"
+  name: "Type: Refactor"
+- color: 0E8A16
+  description: "[이슈 목적] 테스트 코드 추가, 수정"
+  name: "Type: Test"
